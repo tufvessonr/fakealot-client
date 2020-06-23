@@ -1,0 +1,67 @@
+#import * from "./product-enum.graphql"
+
+scalar DateTime
+
+input LoadProductInput {
+  availability: Availability
+  departmentId: ID
+  keyword: String
+  rating: Rating
+}
+
+input CreateProductInput {
+  department: DepartmentInput!
+  tags: [String]!
+
+  brand: String!
+  name: String!
+  description: String
+
+  price: Int!
+  discount: Discount!
+  discountRange: DiscountRangeInput
+
+  quantity: Int!
+
+  availability: Availability!
+
+  rating: Rating!
+
+  images: [String]!
+}
+
+input UpdateProductInput {
+  id: ID!
+  department: DepartmentInput
+  tags: [String]
+
+  brand: String
+  name: String
+  description: String
+
+  price: Int
+  discount: Discount
+  discountRange: DiscountRangeInput
+
+  quantity: Int
+
+  availability: Availability
+
+  rating: Rating
+
+  images: [String]
+}
+
+input DepartmentInput {
+  id: ID!
+  name: String!
+  weight: Int!
+  primary: Boolean!
+
+  subDepartments: [DepartmentInput]!
+}
+
+input DiscountRangeInput {
+  start: DateTime
+  end: DateTime
+}

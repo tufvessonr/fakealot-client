@@ -1,0 +1,7 @@
+# import "../productFragment.graphql"
+
+mutation createProduct($product: CreateProductInput!) {
+  createProduct(product: $product) {
+    ...productFields
+  }
+}

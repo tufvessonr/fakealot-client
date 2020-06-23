@@ -1,0 +1,17 @@
+schema: ./graphql/schema/schema.graphql
+overwrite: true
+documents: ./graphql/docs/**/*.graphql
+generates:
+  ./graphql/generated-sdk.ts:
+    config:
+      scalars:
+        DateTime: Date
+        JSON: any
+        LocalDate: LocalDate
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request
+      - typescript-document-nodes
+      - add: "import { LocalDate } from 'js-joda';"
+      - add: "import { DateTimeResolver, JSONResolver } from 'graphql-scalars';"

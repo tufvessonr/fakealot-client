@@ -1,0 +1,34 @@
+fragment productFields on Product {
+  id
+  department {
+    id
+    name
+    weight
+    primary
+    subDepartments {
+      id
+      name
+      weight
+      primary
+    }
+  }
+
+  brand
+  name
+  description
+
+  price
+  discount
+  discountRange {
+    start
+    end
+  }
+
+  quantity
+  availability
+
+  rating
+
+  tags
+  images
+}

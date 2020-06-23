@@ -1,0 +1,25 @@
+#import * from "./product.graphql"
+#import * from "./product-enum.graphql"
+#import * from "./product-input.graphql"
+#import * from "./upload.graphql"
+
+scalar JSON
+scalar JSONObject
+scalar DateTime
+scalar Upload
+
+type Query {
+  getProduct(productId: ID!): Product
+
+  loadProducts(options: LoadProductInput!): [Product]!
+
+  productImages(id: ID!): [FileData]!
+}
+
+type Mutation {
+  createProduct(product: CreateProductInput!): Product
+  updateProduct(product: UpdateProductInput!): Product
+  deleteProduct(id: ID): Boolean!
+
+  uploadProductImage(id: ID!, file: Upload!): Upload
+}

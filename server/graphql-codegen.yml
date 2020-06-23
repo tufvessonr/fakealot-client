@@ -1,0 +1,21 @@
+schema: ./src/graphql/schema/schema.graphql
+overwrite: true
+
+config:
+  enumValues: '~/types/enums'
+
+generates:
+  src/graphql/generated-types.ts:
+    config:
+      contextType: '~/context/context#IRequestContext'
+      scalars:
+        DateTime: Date
+        JSON: any
+        LocalDate: LocalDate
+        Upload: GraphQLUpload
+    plugins:
+      - 'typescript'
+      - 'typescript-resolvers'
+      - add: "import { LocalDate } from 'js-joda';"
+      - add: "import { DateTimeResolver, JSONResolver } from 'graphql-scalars';"
+      - add: "import { GraphQLUpload } from 'graphql-upload';"

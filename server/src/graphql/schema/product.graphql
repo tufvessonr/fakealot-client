@@ -1,0 +1,39 @@
+#import * from "./product-enum.graphql"
+
+scalar DateTime
+
+type Department {
+  id: ID!
+  name: String!
+  weight: Int!
+  primary: Boolean!
+
+  subDepartments: [Department]!
+}
+
+type DiscountRange {
+  start: DateTime
+  end: DateTime
+}
+
+type Product {
+  id: ID!
+  department: Department!
+  tags: [String]!
+
+  brand: String!
+  name: String!
+  description: String
+
+  price: Int!
+  discount: Discount!
+  discountRange: DiscountRange
+
+  quantity: Int!
+
+  availability: Availability!
+
+  rating: Rating!
+
+  images: [String]!
+}

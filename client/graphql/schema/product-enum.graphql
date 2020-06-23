@@ -1,0 +1,33 @@
+enum Availability {
+  THREE_DAYS
+  ONE_WEEK
+  TWO_WEEKS
+  ONE_MONTH
+  NO_STOCK
+  IN_STOCK
+}
+
+enum Discount {
+  ZERO
+  FIVE
+  TEN
+  FIFTEEN
+  TWENTY
+  TWENTY_FIVE
+  THIRTY
+  THIRTY_FIVE
+  FORTY
+  FORTY_FIVE
+  FIFTY
+  FIFTY_FIVE
+  SIXTY
+}
+
+enum Rating {
+  NONE
+  ONE
+  TWO
+  THREE
+  FOUR
+  FIVE
+}

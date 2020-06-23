@@ -1,0 +1,6 @@
+query ProductImages($id: ID!) {
+  productImages(id: $id) {
+    url
+    expires
+  }
+}

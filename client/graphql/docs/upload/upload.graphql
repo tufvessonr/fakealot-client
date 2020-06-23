@@ -1,0 +1,3 @@
+mutation UploadProductImage($id: ID!, $file: Upload!) {
+  uploadProductImage(id: $id, file: $file)
+}

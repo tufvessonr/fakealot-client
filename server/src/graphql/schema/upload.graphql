@@ -1,0 +1,6 @@
+scalar DateTime
+
+type FileData {
+  url: String!
+  expires: DateTime!
+}

@@ -1,0 +1,7 @@
+# import "../productFragment.graphql"
+
+query loadProducts($options: LoadProductInput!) {
+  loadProducts(options: $options) {
+    ...productFields
+  }
+}
